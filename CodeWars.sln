@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Split Springs", "Split Springs\Split Springs.csproj", "{49DCCE81-01FC-431E-9AE0-FBBD86A1B757}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Create Phone Number", "Create Phone Number\Create Phone Number.csproj", "{C4D20F22-D71F-47E2-9186-155E8182628C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playing with digits", "Playing with digits\Playing with digits.csproj", "{4D9AFDDA-CF4D-40FC-AF88-6728E17E7CDD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{49DCCE81-01FC-431E-9AE0-FBBD86A1B757}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49DCCE81-01FC-431E-9AE0-FBBD86A1B757}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49DCCE81-01FC-431E-9AE0-FBBD86A1B757}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49DCCE81-01FC-431E-9AE0-FBBD86A1B757}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4D20F22-D71F-47E2-9186-155E8182628C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4D20F22-D71F-47E2-9186-155E8182628C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4D20F22-D71F-47E2-9186-155E8182628C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4D20F22-D71F-47E2-9186-155E8182628C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D9AFDDA-CF4D-40FC-AF88-6728E17E7CDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D9AFDDA-CF4D-40FC-AF88-6728E17E7CDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D9AFDDA-CF4D-40FC-AF88-6728E17E7CDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D9AFDDA-CF4D-40FC-AF88-6728E17E7CDD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
