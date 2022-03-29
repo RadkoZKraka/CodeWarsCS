@@ -5,18 +5,29 @@ namespace Your_order_please
 {
     internal class Program
     {
-        public static string Order(string words)
+        public static string Order(string sentence)
         {
-            string[] order = new string[];
-            var punctuation = words.Where(Char.IsPunctuation).Distinct().ToArray();
-            var slowa = words.Split().Select(x => x.Trim(punctuation));
-            for (int i = 0; i < 9; i++)
+            string[] words = sentence.Split(' ');
+            string wynik = "";
+            for (int i = 0; i < words.Length + 1; i++)
             {
-                slowa.OrderBy()
+                foreach (var word in words)
+                {
+                    if (word.Contains("" + i))
+                    { 
+                        wynik = wynik + word + " ";
+                    }
+                }
             }
+            //dzi4n do2b ask3 sik1
+            return wynik.TrimEnd(' ');
         }
         public static void Main(string[] args)
         {
+            Console.WriteLine("podaj stringa");
+            string s = Console.ReadLine();
+            string wynik = Order(s);
+            Console.WriteLine(wynik);
         }
     }
 }
