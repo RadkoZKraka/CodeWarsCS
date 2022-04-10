@@ -15,8 +15,6 @@ namespace Create_Phone_Number
 
         public static string CreatePhoneNumber(int[] phone)
         {
-            // var result = string.Join(",", ints.Select(x => x.ToString()).ToArray());
-            // string phoneNumber = phone.Length.ToString();
             string phoneNumber = "(" + String.Join("", phone.Select( x => x.ToString()).ToArray(), 0, 3) + ") " + String.Join("",  phone.Select( y => y.ToString()).ToArray(), 3, 3) + "-" +
                                  String.Join("",  phone.Select( z => z.ToString()).ToArray(), 6, 4);
             return phoneNumber;
