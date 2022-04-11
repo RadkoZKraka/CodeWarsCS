@@ -5,6 +5,7 @@ namespace Scramblies
 {
     internal class Program
     {
+        //https://www.codewars.com/kata/55c04b4cc56a697bb0000048
         public static bool Scramble(string str1, string str2)
         {
             var input1 = str1.ToArray();

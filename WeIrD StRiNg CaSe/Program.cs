@@ -5,6 +5,7 @@ namespace WeIrD_StRiNg_CaSe
 {
     internal class Program
     {
+        //https://www.codewars.com/kata/52b757663a95b11b3d00062d
         public static string ToWeirdCase(string s)
         {
             var words = s.Split(' ');

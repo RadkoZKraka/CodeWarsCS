@@ -8,6 +8,7 @@ namespace The_Supermarket_Queue
 {
     internal class Program
     {
+        //https://www.codewars.com/kata/57b06f90e298a7b53d000a86
         public static long QueueTime(int[] customers, int n)
         {
             List<int> checkouts = new List<int>();
@@ -21,14 +22,7 @@ namespace The_Supermarket_Queue
             {
                 checkouts[checkouts.IndexOf(checkouts.Min())] = checkouts.Min() + customers[i];
             }
-            // Task[] taskList = new Task[n];
-            // for (int i = 0; i < customers.Length; i++)
-            // {
-            //     taskList[i] = Task.Factory.StartNew(() => Thread.Sleep(customers[i]));
-            // }
-            // taskList[1].Start();
-            // Task.WaitAll(taskList);
-            // return 0;
+            
             return checkouts.Max();
         }
         

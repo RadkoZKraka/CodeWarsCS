@@ -7,6 +7,7 @@ namespace Array.diff
 {
     internal class Program
     {
+        //https://www.codewars.com/kata/523f5d21c841566fde000009
         public static int[] ArrayDiff(int[] a, int[] b)
         {
             for (int i = 0; i < b.Length; i++)

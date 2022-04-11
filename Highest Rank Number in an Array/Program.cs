@@ -6,6 +6,7 @@ namespace Highest_Rank_Number_in_an_Array
 {
     internal class Program
     {
+        //https://www.codewars.com/kata/5420fc9bb5b2c7fd57000004
         public static int HighestRank(int[] arr)
         {
             Dictionary<int, int> wynik = new Dictionary<int, int>();

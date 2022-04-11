@@ -5,6 +5,7 @@ namespace Multiples_of_3_or_5
 {
     internal class Program
     {
+        //https://www.codewars.com/kata/514b92a657cdc65150000006
         public static int Solution(int value)
         {
             var suma = 0;

@@ -4,8 +4,7 @@ namespace First_non_repeating_character
 {
     internal class Program
     {
-        //https://www.codewars.com/kata/52bc74d4ac05d0945d00054e/train/csharp
-        
+        //https://www.codewars.com/kata/52bc74d4ac05d0945d00054e
         //to nie jest zrobione
         public static string FirstNonRepeatingLetter(string s)
         {

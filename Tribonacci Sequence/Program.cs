@@ -4,6 +4,7 @@ namespace Tribonacci_Sequence
 {
     internal class Program
     {
+        //https://www.codewars.com/kata/556deca17c58da83c00002db
         public static double[]  Tribonacci(double[] signature, int n)
         {
             // hackonacci me
