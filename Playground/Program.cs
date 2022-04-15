@@ -39,7 +39,7 @@ namespace Playground
 
             return s[length / 2].ToString();
         }
-        
+
         public static int PositiveSum(int[] arr)
         {
             var sum = 0;
@@ -52,9 +52,10 @@ namespace Playground
 
                 sum += arr[i];
             }
-            
+
             return sum;
         }
+
         //https://www.codewars.com/kata/5583090cbe83f4fd8c000051
         public static long[] Digitize(long n)
         {
@@ -64,15 +65,26 @@ namespace Playground
             {
                 res[i] = Convert.ToInt64(arr[i]);
             }
+
             return res.Reverse().ToArray();
         }
+
+
+        public static bool XO(string input)
+        {
+            var z = input.Where(x => x == 'x' || x == 'X');
+            var p = input.Where(x => x == 'o' || x == 'O');
+            if (z.Count() != p.Count())
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         public static void Main(string[] args)
         {
-            var o = Digitize(35231);
-            foreach (var p in o)
-            {
-                Console.Write(p);
-            }
+            Console.WriteLine(XO("xoo"));
         }
     }
 }

@@ -18,8 +18,6 @@ namespace Highest_Rank_Number_in_an_Array
                 }
             }
             
-            
-            
             var max = wynik.Aggregate((l , r) => l.Value  > r.Value  ? l : r).Value;
             var list = wynik.Where(x => x.Value == max);
             var max2 = list.Aggregate((l , r) => l.Key  > r.Key  ? l : r).Key;
