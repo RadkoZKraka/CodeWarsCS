@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Playground
@@ -24,10 +25,8 @@ namespace Playground
             return min + min2;
         }
 
-        public static int FindSmallestInt(int[] args)
-        {
-            return args.Min();
-        }
+        public static int FindSmallestInt(int[] args) => args.Min();
+        
 
         public static string GetMiddle(string s)
         {
@@ -81,10 +80,65 @@ namespace Playground
 
             return true;
         }
+        public static bool IsSquare(int n)
+        {
+            var res = Math.Sqrt(n);
+            if (Math.Ceiling(res) == Math.Floor(res))
+            {
+                return true;
+            }
 
+            return false;
+            //Your code goes here!
+        }
+        public static int StringToNumber(String str) => Convert.ToInt32(str);
+        
+        public static bool ValidatePin(string pin)
+        {
+            return true || false;
+        }
+        
+        public static int СenturyFromYear(int year)
+        {
+            int mil = year / 100;
+            if (year%mil == 0)
+            {
+                return mil;
+            }
+            return mil+1;
+        }
+
+        public static string boolToWord(bool word) => word ? "Yes" : "No";
+
+        public int GetSum(int a, int b) => a == b ? a : a + b;
+        
+        public static string FindNeedle(object[] haystack) => "found the needle at position " + Array.IndexOf(haystack, "needle");
+        
+        public static string Solution(string str) => String.Join("",str.ToArray().Reverse());
+        
+        //https://www.codewars.com/kata/54e6533c92449cc251001667/train/csharp
+        public static string UniqueInOrder<T>(IEnumerable<T> iterable)
+        {
+            
+            if (iterable == null || !iterable.Any()) return "";
+            
+            
+            var first = (char)(object)iterable.ToArray()[0];
+            List<char> res = new List<char>();
+            res.Add(first);
+
+            foreach (var item in iterable.Skip(1))
+            {
+                if (item.Equals(first)) continue;
+                first = (char)(object)item;
+                res.Add(first);
+            }
+
+            return String.Join("",res);
+        }
         public static void Main(string[] args)
         {
-            Console.WriteLine(XO("xoo"));
+            Console.WriteLine(UniqueInOrder("test"));
         }
     }
 }
