@@ -136,6 +136,21 @@ namespace Playground
 
             return String.Join("",res);
         }
+        
+        public static int SquareSum(int[] n)
+        {
+            var sum = 0;
+            if (n.Length == 0)
+            {
+                return 0;
+            }
+            foreach (var i in n)
+            {
+                sum = sum + i * i;
+            }
+
+            return sum;
+        }
         public static void Main(string[] args)
         {
             Console.WriteLine(UniqueInOrder("test"));
