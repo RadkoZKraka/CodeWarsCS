@@ -9,7 +9,7 @@ namespace Next_bigger_number_with_the_same_digits
         public static long NextBiggerNumber(long n)
         {
             long[] arr = n.ToString().ToArray().Select(Convert.ToInt64).ToArray();
-            
+            return arr.First();
         }
         public static void Main(string[] args)
         {
