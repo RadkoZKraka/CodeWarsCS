@@ -151,6 +151,30 @@ namespace Playground
 
             return sum;
         }
+        public static int Paperwork(int n, int m)
+        {
+            if (n < 0 || m < 0)
+            {
+                return 0;
+            }
+
+            return n * m;
+            //#Happy Coding! ^_^
+        }
+        public static int SumMix(object[] x)
+        {
+            if (x.Length == 0)
+            {
+                return 0;
+            }
+            var sum = 0;
+            foreach (var i in x)
+            {
+                sum += Convert.ToInt32(i);
+            }
+
+            return sum;
+        }
         public static void Main(string[] args)
         {
             Console.WriteLine(UniqueInOrder("test"));

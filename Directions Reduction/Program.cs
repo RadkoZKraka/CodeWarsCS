@@ -11,12 +11,22 @@ namespace Directions_Reduction
         {
             var pairVer = new string[]{"NORTH","SOUTH"};
             var pairHor = new string[]{"WEST","EAST"};
+            var arrList = arr.ToList();
+            for (int i = 0; i < arrList.Count; i++)
+            {
+                if ((arrList[i] == pairHor[0] && arrList[i + 1] == pairHor[1]) || (arrList[i] == pairHor[1] && arrList[i + 1] == pairHor[0]) || (arrList[i] == pairVer[0] && arrList[i + 1] == pairVer[1]) || (arrList[i] == pairVer[1] && arrList[i + 1] == pairVer[0]))
+                {
+                    
+                    // arr = arr.Where(x => x == arr[i] && x == arr[i + 1]).ToArray();
+                }
+            }
             var result = new string [] {};
             for (int i = 0; i < arr.Length; i++)
             {
                 if ((arr[i] == pairHor[0] && arr[i + 1] == pairHor[1]) || (arr[i] == pairHor[1] && arr[i + 1] == pairHor[0]) || (arr[i] == pairVer[0] && arr[i + 1] == pairVer[1]) || (arr[i] == pairVer[1] && arr[i + 1] == pairVer[0]))
                 {
-                    arr = arr.Where(x => x == arr[i] && x == arr[i + 1]).ToArray();
+                    
+                    // arr = arr.Where(x => x == arr[i] && x == arr[i + 1]).ToArray();
                 }
             }
 
