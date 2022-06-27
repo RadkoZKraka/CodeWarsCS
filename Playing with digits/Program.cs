@@ -1,24 +1,32 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Linq;
 
 namespace Playing_with_digits
 {
     internal class Program
     {
+        public static long digPow(int n, int p) {
+            // your code
+            var intArr = n.ToString().ToArray();
+            var sum = 0d;
+            var pow = p;
+            for (int i = 0; i < intArr.Length; i++)
+            {
+                sum += Math.Pow(intArr[i] - 48, p);
+                p++;
+            }
+
+            var test = (int)sum / n;
+            if ((int)sum % n != 0)
+            {
+                return -1;
+            }
+
+            return (int)sum / n;
+        }
         public static void Main(string[] args)
         {
-        }
-
-        public static int digPow(int n, int p)
-        {
-            List<int> dig = new List<int>();
-            int l = n.ToString().Length - 1;
-            for (int i = 0; i < l; i++)
-            {
-                dig.Add(n/l);
-                
-            }
-            // dig.Add();
-            return 0;
+            Console.WriteLine(digPow(46288,3));
         }
     }
 }

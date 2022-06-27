@@ -175,9 +175,101 @@ namespace Playground
 
             return sum;
         }
+        public static string ReverseWords(string str)
+        {
+            if (String.IsNullOrEmpty(str))
+            {
+                return "";
+            }
+
+            var words = str.Split();
+            for (int i = 0; i < words.Length; i++)
+            {
+                words[i] = String.Join("",words[i].Reverse());
+            }
+
+            return String.Join(" ", words);
+        }
+        public static string AddBinary(int a, int b)
+        {
+            // if (a == 0 || b == 0)
+            // {
+            //     return "";
+            // }
+            return Convert.ToString(a + b, 2);
+        }
+        public static string RepeatStr(int n, string s)
+        {
+            string result = "";
+            for (int i = 0; i < n; i++)
+            {
+                result += s;
+            }
+            return result;
+        }
+        public static object FirstNonConsecutive(int[] arr)
+        {
+            for (int j = 0; j < arr.Length; j++)
+            {
+                if (arr[j] != arr[j - 1])
+                {
+                    return arr[j];
+                }
+            }
+            return null;
+        }
+        public static int Sum(int[] numbers)
+        {
+            if (numbers == null)
+            {
+                return 0;
+            }
+            Array.Sort(numbers);
+            var result = numbers.Skip(1).Take(numbers.Length - 1);
+            return result.Sum();
+        }
+        public static bool is_divide_by(int number, int a, int b)
+        {
+            if (number%a == 0 && number%b == 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
+        public static string[] StringToArray(string str)
+        {
+            // code code code
+            if(String.IsNullOrEmpty(str))
+            {
+                return string.Empty.Split();
+            }
+            return str.Split();
+        }
+        public static string NoSpace(string input)
+        {
+            //Code it!
+            var res = input.Split();
+            return String.Join("",input.Split());
+        }  
+        public static int CountSmileys(string[] smileys)
+        {
+            var num = 0;
+            var sm = "";
+            for (int i = 0; i < smileys.Length; i++)
+            {
+                sm = String.Join("",smileys[i].Skip(i).Take(3));
+                if (sm[0] == ';' || sm[0] == ':' && sm[1] == '-' || sm[1] == '~' && sm[2] == ')' || sm[2] == 'D')
+                {
+                    num += 1;
+                }
+            }
+
+            return num;
+        }
         public static void Main(string[] args)
         {
-            Console.WriteLine(UniqueInOrder("test"));
+            Console.WriteLine(CountSmileys(new string[] { ":D", ":~)", ";~D", ":)" }));
         }
     }
 }

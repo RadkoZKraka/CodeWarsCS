@@ -5,11 +5,11 @@
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{5A999887-5EF8-4DE3-BD6F-61C689DB8E83}</ProjectGuid>
+        <ProjectGuid>{A18EE53F-F2FA-40AF-AE0B-4A64E1B08A55}</ProjectGuid>
         <OutputType>Exe</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>Playing_with_digits</RootNamespace>
-        <AssemblyName>Playing_with_digits</AssemblyName>
+        <RootNamespace>Prime_Streaming</RootNamespace>
+        <AssemblyName>Prime_Streaming</AssemblyName>
         <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

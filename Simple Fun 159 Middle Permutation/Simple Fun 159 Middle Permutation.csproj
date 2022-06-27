@@ -5,11 +5,11 @@
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{5A999887-5EF8-4DE3-BD6F-61C689DB8E83}</ProjectGuid>
+        <ProjectGuid>{0FF313F4-83C6-41DC-80D1-53F325E12C6A}</ProjectGuid>
         <OutputType>Exe</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>Playing_with_digits</RootNamespace>
-        <AssemblyName>Playing_with_digits</AssemblyName>
+        <RootNamespace>Simple_Fun_159_Middle_Permutation</RootNamespace>
+        <AssemblyName>Simple_Fun_159_Middle_Permutation</AssemblyName>
         <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

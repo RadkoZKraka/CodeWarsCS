@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Playing_with_digits")]
+[assembly: AssemblyTitle("Simple_Fun_159_Middle_Permutation")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Playing_with_digits")]
+[assembly: AssemblyProduct("Simple_Fun_159_Middle_Permutation")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("5A999887-5EF8-4DE3-BD6F-61C689DB8E83")]
+[assembly: Guid("0FF313F4-83C6-41DC-80D1-53F325E12C6A")]
 
 // Version information for an assembly consists of the following four values:
 //

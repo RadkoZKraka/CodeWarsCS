@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Playing_with_digits")]
+[assembly: AssemblyTitle("Prime_Streaming")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Playing_with_digits")]
+[assembly: AssemblyProduct("Prime_Streaming")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("5A999887-5EF8-4DE3-BD6F-61C689DB8E83")]
+[assembly: Guid("A18EE53F-F2FA-40AF-AE0B-4A64E1B08A55")]
 
 // Version information for an assembly consists of the following four values:
 //
