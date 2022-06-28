@@ -267,9 +267,65 @@ namespace Playground
 
             return num;
         }
+        public static string ExpandedForm(long num)
+        {
+            var number = num.ToString();
+            string[] numbers = new string[number.Length];
+            for (int i = 0; i < number.Length; i++)
+            {
+                numbers[i] = number[i] + new string('0', number.Length - i - 1);
+            }
+            
+            return String.Join(" + ", numbers.Where(x => !x.StartsWith("0")));
+        }
+        public static IEnumerable<int> GetIntegersFromList(List<object> listOfItems)
+        {
+            return listOfItems.Where(x => x is Int32).Cast<int>();
+        }
+        public static int FindEvenIndex(int[] arr)
+        {
+            if (arr.Length == 0 || arr[0] == 0)
+            {
+                return 0;
+            }
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (Convert.ToInt32(arr.Sum()) == 0)
+                {
+                    return 0;
+                }
+
+                if (i == 0) continue;
+                var first = arr.Take(i).Sum();
+                var second = arr.Skip(i + 1).Sum();
+                if (first == second)
+                {
+                    return i;
+                }
+            }
+
+            return -1;
+        }
+        //https://www.codewars.com/kata/5502c9e7b3216ec63c0001aa/train/csharp
+        public static IEnumerable<string> OpenOrSenior(int[][] data)
+        {
+            var result = new string[data.Length];
+            for (int i = 0; i < data.Length; i++)
+            {
+                if (data[i].Sum() < 55)
+                {
+                    result[i] = "Open";
+                    
+                }
+
+                result[i] = "Senior";
+            }
+
+            return result;
+        }
         public static void Main(string[] args)
         {
-            Console.WriteLine(CountSmileys(new string[] { ":D", ":~)", ";~D", ":)" }));
+            Console.WriteLine(FindEvenIndex(new int[] {1,2,3,4,3,2,1}));
         }
     }
 }
