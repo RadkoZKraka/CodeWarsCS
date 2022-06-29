@@ -312,20 +312,22 @@ namespace Playground
             var result = new string[data.Length];
             for (int i = 0; i < data.Length; i++)
             {
-                if (data[i].Sum() < 55)
+                var first = data[i][0];
+                var second = data[i][1];
+                if (first >= 55 && second > 7)
                 {
-                    result[i] = "Open";
-                    
+                    result[i] = "Senior";
+                    continue;
                 }
 
-                result[i] = "Senior";
+                result[i] = "Open";
             }
 
             return result;
         }
         public static void Main(string[] args)
         {
-            Console.WriteLine(FindEvenIndex(new int[] {1,2,3,4,3,2,1}));
+            Console.WriteLine(OpenOrSenior(new[] { new[] { 45, 12 }, new[] { 55, 21 }, new[] { 19, 2 }, new[] { 104, 20 } }));
         }
     }
 }

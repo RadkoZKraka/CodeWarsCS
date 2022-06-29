@@ -68,6 +68,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple Fun 159 Middle Permu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playing with digits", "Playing with digits\Playing with digits.csproj", "{5A999887-5EF8-4DE3-BD6F-61C689DB8E83}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snail", "Snail\Snail.csproj", "{4245A01C-DA17-45B8-965C-B67945A78756}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sort binary tree by levels", "Sort binary tree by levels\Sort binary tree by levels.csproj", "{3BB36F31-2062-4538-8310-4BE2CE2450EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -210,5 +214,13 @@ Global
 		{5A999887-5EF8-4DE3-BD6F-61C689DB8E83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A999887-5EF8-4DE3-BD6F-61C689DB8E83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A999887-5EF8-4DE3-BD6F-61C689DB8E83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4245A01C-DA17-45B8-965C-B67945A78756}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4245A01C-DA17-45B8-965C-B67945A78756}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4245A01C-DA17-45B8-965C-B67945A78756}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4245A01C-DA17-45B8-965C-B67945A78756}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BB36F31-2062-4538-8310-4BE2CE2450EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BB36F31-2062-4538-8310-4BE2CE2450EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BB36F31-2062-4538-8310-4BE2CE2450EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BB36F31-2062-4538-8310-4BE2CE2450EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
