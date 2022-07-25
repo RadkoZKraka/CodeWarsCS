@@ -6,18 +6,89 @@ namespace Playground
 {
     internal class Program
     {
+        public static void Main(string[] args)
+        {
+            Console.WriteLine(NbYear(1500, 5, 100, 5000));
+        }
+
+        private static int NbYear(int p0, double percent, int aug, int p)
+        {
+            double result;
+            var years = 0;
+            do
+            {
+                result = p0 * (1 + percent/100);
+                result += aug;
+                if (result >= p)
+                {
+                    return 0;
+                }
+
+                years += 1;
+            } while (result <= p);
+            return years;
+        }
+
+        private static int[] DeleteNth(int[] arr, int x)
+        {
+            var intList = new List<int>();
+            foreach (var i in arr)
+            {
+                if (intList.Count(y => y == i) >= x)
+                {
+                    continue;
+                }
+                intList.Add(i);
+            }
+
+            return intList.ToArray();
+        }
+        public static string AreYouPlayingBanjo(string name)
+        {
+            if (Char.ToLower(name[0]) == 'r')
+            {
+                return name + " plays banjo";
+            }
+
+            return name + " does not play banjo";
+        }
+        public static string AbbrevName(string name)
+        {
+            return Char.ToUpper(name.Split()[0][0]) + "." + Char.ToUpper(name.Split()[1][0]);
+        }
+        public static string Longest (string s1, string s2)
+        {
+            return String.Join("",s1.Union(s2).ToArray().OrderBy(x => x));
+        }
+        public static int find_it(int[] seq)
+        {
+            foreach (var i in seq)
+            {
+                if (seq.Count(x => x == i) % 2 != 0)
+                {
+                    return i;
+                }
+            }
+
+            return -1;
+        }
+        public static bool Solution(string str, string ending)
+        {
+            if (String.IsNullOrEmpty(str))
+            {
+                return false;
+            }
+            if (str.EndsWith(ending)) return true;
+            return false;
+        }
         public static string OddOrEven(int[] array)
         {
-            var l = 0;
-            for (int i = 0; i < array.Length; i++)
-            {
-                l += array[i];
-            }
+            var l = array.Sum();
 
             return l % 2 == 0 ? "even" : "odd";
         }
 
-        public static int sumTwoSmallestNumbers(int[] numbers)
+        public static int SumTwoSmallestNumbers(int[] numbers)
         {
             var min = numbers.Min();
             numbers = numbers.Where(x => x != min).ToArray();
@@ -41,18 +112,7 @@ namespace Playground
 
         public static int PositiveSum(int[] arr)
         {
-            var sum = 0;
-            for (int i = 0; i < arr.Length; i++)
-            {
-                if (arr[i] < 0)
-                {
-                    continue;
-                }
-
-                sum += arr[i];
-            }
-
-            return sum;
+            return arr.Where(t => t >= 0).Sum();
         }
 
         //https://www.codewars.com/kata/5583090cbe83f4fd8c000051
@@ -69,7 +129,7 @@ namespace Playground
         }
 
 
-        public static bool XO(string input)
+        public static bool Xo(string input)
         {
             var z = input.Where(x => x == 'x' || x == 'X');
             var p = input.Where(x => x == 'o' || x == 'O');
@@ -83,7 +143,7 @@ namespace Playground
         public static bool IsSquare(int n)
         {
             var res = Math.Sqrt(n);
-            if (Math.Ceiling(res) == Math.Floor(res))
+            if (Math.Abs(Math.Ceiling(res) - Math.Floor(res)) < 0.1)
             {
                 return true;
             }
@@ -95,7 +155,7 @@ namespace Playground
         
         public static bool ValidatePin(string pin)
         {
-            return true || false;
+            return true;
         }
         
         public static int СenturyFromYear(int year)
@@ -108,7 +168,7 @@ namespace Playground
             return mil+1;
         }
 
-        public static string boolToWord(bool word) => word ? "Yes" : "No";
+        public static string BoolToWord(bool word) => word ? "Yes" : "No";
 
         public int GetSum(int a, int b) => a == b ? a : a + b;
         
@@ -119,15 +179,14 @@ namespace Playground
         //https://www.codewars.com/kata/54e6533c92449cc251001667/train/csharp
         public static string UniqueInOrder<T>(IEnumerable<T> iterable)
         {
+            var enumerable = iterable as T[] ?? iterable.ToArray();
+            if (!enumerable.Any()) return "";
             
-            if (iterable == null || !iterable.Any()) return "";
             
-            
-            var first = (char)(object)iterable.ToArray()[0];
-            List<char> res = new List<char>();
-            res.Add(first);
+            var first = (char)(object)enumerable.ToArray()[0];
+            List<char> res = new List<char> {first};
 
-            foreach (var item in iterable.Skip(1))
+            foreach (var item in enumerable.Skip(1))
             {
                 if (item.Equals(first)) continue;
                 first = (char)(object)item;
@@ -249,16 +308,14 @@ namespace Playground
         public static string NoSpace(string input)
         {
             //Code it!
-            var res = input.Split();
             return String.Join("",input.Split());
         }  
         public static int CountSmileys(string[] smileys)
         {
             var num = 0;
-            var sm = "";
             for (int i = 0; i < smileys.Length; i++)
             {
-                sm = String.Join("",smileys[i].Skip(i).Take(3));
+                var sm = String.Join("",smileys[i].Skip(i).Take(3));
                 if (sm[0] == ';' || sm[0] == ':' && sm[1] == '-' || sm[1] == '~' && sm[2] == ')' || sm[2] == 'D')
                 {
                     num += 1;
@@ -324,10 +381,6 @@ namespace Playground
             }
 
             return result;
-        }
-        public static void Main(string[] args)
-        {
-            Console.WriteLine(OpenOrSenior(new[] { new[] { 45, 12 }, new[] { 55, 21 }, new[] { 19, 2 }, new[] { 104, 20 } }));
         }
     }
 }
