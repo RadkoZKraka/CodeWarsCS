@@ -8,9 +8,189 @@ namespace Playground
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine(NbYear(1500, 5, 100, 5000));
+            Console.WriteLine(RemoveSmallest(new List<int>{1, 2, 3, 4, 5}));
+        }
+        public static List<int> RemoveSmallest(List<int> numbers)
+        {
+            if (!numbers.Any()) return new List<int>();
+            var arr = numbers.ToArray();
+            var pos = Array.IndexOf(arr, numbers.Min());
+            return numbers.Where((x, y) => y != pos).ToList();
+        }
+        public static object[] RemoveEveryOther(object[] arr)
+        {
+            return arr.Where((x, i) => i % 2 == 0).ToArray();
+        }
+        public static string[] TowerBuilder(int nFloors)
+        {
+            if (nFloors == 1) return new []{"*"};
+            var arr = new string[nFloors];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i - 1] = new string(' ',nFloors - i) + new string('*', UnEven(i + 1)) + new string(' ',nFloors - i);
+            }
+
+            return arr;
         }
 
+        public static int UnEven(int n)
+        {
+            return n * 2 - 1;
+        } 
+        public static bool BetterThanAverage(int[] ClassPoints, int YourPoints)
+        {
+            var avg = (ClassPoints.Sum() + YourPoints)/(ClassPoints.Length + 1);
+            return YourPoints > avg;
+        }
+        public static string DuplicateEncode(string word)
+        {
+            if (string.IsNullOrEmpty(word)) return "";
+            var result = "";
+            foreach (var c in word.ToLower())
+            {
+                if (word.ToLower().Count(x => x == c) > 1)
+                {
+                    result += ")";
+                }
+
+                result += "(";
+            }
+            return result;
+        }
+        public static Dictionary<char, int> Count(string str)
+        {
+            if (String.IsNullOrEmpty(str))
+            {
+                return new Dictionary<char, int>();
+            }
+            var result = new Dictionary<char, int>();
+            foreach (var c in str)
+            {
+                if (result.ContainsKey(c))
+                {
+                    result[c] += 1;
+                    continue;
+                }
+                result.Add(c,1);
+            }
+
+            return result;
+        }
+        public static bool Feast(string beast, string dish)
+        {
+            return beast[0] == dish[0] && beast.Last() == dish.Last();
+        }
+        public static int OtherAngle(int a, int b)
+        {
+            return 180 - a - b;
+        }
+        public static ulong[] productFib(ulong prod)
+        {
+            ulong x = 0, y = 1 , z = 0;
+            while (x * y < prod)
+            {
+                ulong temp = 0;
+                temp = x + y;
+                x = y;
+                y = temp;
+                
+                if (x * y == prod)
+                {
+                    return new ulong[]{x, y, 1};
+                }
+                z++;
+            }
+            return new ulong[]{x, y, 0};
+        }
+        public static double SumArray(double[] array)
+        {
+            if (array == Array.Empty<double>()) return 0;
+            return array.Sum();
+        }
+        public static int Grow(int[] x)
+        {
+            var result = 1;
+            foreach (var i in x)
+            {
+                result *= i;
+            }
+            int prod = x.Aggregate(1, (a, b) => a * b);
+            
+            return result;
+        }
+        public static int binaryArrayToNumber(int[] BinaryArray)
+        {
+            return Convert.ToInt32(String.Join("", BinaryArray), 2);
+        }
+        public static string seriesSum (int n)
+        {
+            var result = 1d;
+            if (n == 1) return "1.00";
+            if (n == 0) return "0.00";
+            for (int i = 4; i - 4 < n; i += 3)
+            {
+                result += 1 / Convert.ToDouble(i);
+            }
+
+            return (Math.Truncate(result * 100) / 100).ToString();
+        }
+        public static bool IsValidWalk(string[] walk)
+        {
+            if (walk.Count() != 10) return false;
+            if (walk.Count(x => x == "w") == walk.Count(x => x == "e") && walk.Count(x => x == "n") == walk.Count(x => x == "s"))
+            {
+                return true;
+            }
+
+            return false;
+        }
+        public string dnaToRna(string dna)
+        {
+            
+            return dna.ToUpper().Replace('T', 'U');
+        }
+        public static int DescendingOrder(int num)
+        {
+            return Convert.ToInt32(string.Join("",num.ToString().OrderByDescending(x => x)));
+        }
+        public static int[] CountPositivesSumNegatives(int[] input)
+        {
+            if (input == null || input == Array.Empty<int>() || input.Length == 0) return new int[]{};
+            var positivesSum = input.Count(x => x > 0);
+            
+            var negativesSum = input.Where(x => x < 0).Sum();
+            
+            return new []{positivesSum, negativesSum}; //return an array with count of positives and sum of negatives
+        }
+        public static long findNb(long m)
+        {
+            long output = 1l;
+            long check = 0l;
+            while (check <= m)
+            {
+                check += (long)Math.Pow(output, 3);
+                if (check == m) return output;
+                output++;
+            }
+
+            return -1;
+        }
+        public static int bouncingBall(double h, double bounce, double window)
+        {
+            if (h < 0) return -1;
+            if (bounce < 0 || bounce > 1) return -1;
+            if (window > h) return -1;
+            double ballBounce = h;
+            var timesBallBounced = 0;
+            while (ballBounce > window)
+            {
+                timesBallBounced++;
+                ballBounce *= bounce;
+                if (ballBounce < window) break;
+                timesBallBounced++;
+            }
+            return timesBallBounced;
+        }
         private static int NbYear(int p0, double percent, int aug, int p)
         {
             double result;

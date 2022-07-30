@@ -4,11 +4,11 @@
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{55381522-6765-4FDA-B63F-31078BA210BB}</ProjectGuid>
+        <ProjectGuid>{820745F4-B5DB-4610-834E-1FEFC4D0A81C}</ProjectGuid>
         <OutputType>Exe</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>ROT13</RootNamespace>
-        <AssemblyName>ROT13</AssemblyName>
+        <RootNamespace>My_BEDMAS_Approved_Calculator</RootNamespace>
+        <AssemblyName>My_BEDMAS_Approved_Calculator</AssemblyName>
         <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
