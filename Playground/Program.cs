@@ -10,6 +10,25 @@ namespace Playground
         {
             Console.WriteLine(RemoveSmallest(new List<int>{1, 2, 3, 4, 5}));
         }
+        public static int[] TwoSum(int[] numbers, int target)
+        {
+            return new int[0];
+        }
+        public static int GetUnique(IEnumerable<int> numbers)
+        {
+            var resultD = new Dictionary<int, int>();
+            foreach (var i in numbers)
+            {
+                if (resultD.ContainsKey(i))
+                {
+                    resultD[i]++;
+                    continue;
+                }
+                resultD.Add(i,0);
+            }
+
+            return resultD.First(x => x.Value == 1).Value;
+        }
         public static List<int> RemoveSmallest(List<int> numbers)
         {
             if (!numbers.Any()) return new List<int>();
