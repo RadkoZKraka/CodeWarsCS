@@ -11,7 +11,32 @@ namespace Playground
         {
             Console.WriteLine(High("aa b"));
         }
+        
+        public static int Litres(double time)
+        {
+            int t = (int)Decimal.Divide(Convert.ToDecimal(time), 0.5M);
+            return t;
+        }
+        
+        public static string RemoveExclamationMarks(string s)
+        {
+            return s.Replace("!", "");
+        }
+        
+        public static int[] Capitals(string word)
+        {
+            var capList = new List<int>();
+            for (int i = 0; i < word.Length; i++)
+            {
+                if (Char.IsUpper(word[i]))
+                {
+                    capList.Add(i);
+                }
+            }
 
+            return capList.ToArray();
+        }
+        
         public static int StrCount(string str, string letter)
         {
             return str.Count(x => x == letter[0]);
