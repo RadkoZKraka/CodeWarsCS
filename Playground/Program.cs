@@ -6,6 +6,11 @@ namespace Playground
 {
     internal class Program
     {
+        public static void Main(string[] args)
+        {
+            Console.WriteLine(OpenOrSenior(new[] {new[] {45, 12}, new[] {55, 21}, new[] {19, 2}, new[] {104, 20}}));
+        }
+
         public static string OddOrEven(int[] array)
         {
             var l = 0;
@@ -26,7 +31,7 @@ namespace Playground
         }
 
         public static int FindSmallestInt(int[] args) => args.Min();
-        
+
 
         public static string GetMiddle(string s)
         {
@@ -80,6 +85,7 @@ namespace Playground
 
             return true;
         }
+
         public static bool IsSquare(int n)
         {
             var res = Math.Sqrt(n);
@@ -91,52 +97,54 @@ namespace Playground
             return false;
             //Your code goes here!
         }
+
         public static int StringToNumber(String str) => Convert.ToInt32(str);
-        
+
         public static bool ValidatePin(string pin)
         {
             return true || false;
         }
-        
+
         public static int СenturyFromYear(int year)
         {
             int mil = year / 100;
-            if (year%mil == 0)
+            if (year % mil == 0)
             {
                 return mil;
             }
-            return mil+1;
+
+            return mil + 1;
         }
 
         public static string boolToWord(bool word) => word ? "Yes" : "No";
 
         public int GetSum(int a, int b) => a == b ? a : a + b;
-        
-        public static string FindNeedle(object[] haystack) => "found the needle at position " + Array.IndexOf(haystack, "needle");
-        
-        public static string Solution(string str) => String.Join("",str.ToArray().Reverse());
-        
+
+        public static string FindNeedle(object[] haystack) =>
+            "found the needle at position " + Array.IndexOf(haystack, "needle");
+
+        public static string Solution(string str) => String.Join("", str.ToArray().Reverse());
+
         //https://www.codewars.com/kata/54e6533c92449cc251001667/train/csharp
         public static string UniqueInOrder<T>(IEnumerable<T> iterable)
         {
-            
             if (iterable == null || !iterable.Any()) return "";
-            
-            
-            var first = (char)(object)iterable.ToArray()[0];
+
+
+            var first = (char) (object) iterable.ToArray()[0];
             List<char> res = new List<char>();
             res.Add(first);
 
             foreach (var item in iterable.Skip(1))
             {
                 if (item.Equals(first)) continue;
-                first = (char)(object)item;
+                first = (char) (object) item;
                 res.Add(first);
             }
 
-            return String.Join("",res);
+            return String.Join("", res);
         }
-        
+
         public static int SquareSum(int[] n)
         {
             var sum = 0;
@@ -144,6 +152,7 @@ namespace Playground
             {
                 return 0;
             }
+
             foreach (var i in n)
             {
                 sum = sum + i * i;
@@ -151,6 +160,7 @@ namespace Playground
 
             return sum;
         }
+
         public static int Paperwork(int n, int m)
         {
             if (n < 0 || m < 0)
@@ -161,12 +171,14 @@ namespace Playground
             return n * m;
             //#Happy Coding! ^_^
         }
+
         public static int SumMix(object[] x)
         {
             if (x.Length == 0)
             {
                 return 0;
             }
+
             var sum = 0;
             foreach (var i in x)
             {
@@ -175,6 +187,7 @@ namespace Playground
 
             return sum;
         }
+
         public static string ReverseWords(string str)
         {
             if (String.IsNullOrEmpty(str))
@@ -185,11 +198,12 @@ namespace Playground
             var words = str.Split();
             for (int i = 0; i < words.Length; i++)
             {
-                words[i] = String.Join("",words[i].Reverse());
+                words[i] = String.Join("", words[i].Reverse());
             }
 
             return String.Join(" ", words);
         }
+
         public static string AddBinary(int a, int b)
         {
             // if (a == 0 || b == 0)
@@ -198,6 +212,7 @@ namespace Playground
             // }
             return Convert.ToString(a + b, 2);
         }
+
         public static string RepeatStr(int n, string s)
         {
             string result = "";
@@ -205,8 +220,10 @@ namespace Playground
             {
                 result += s;
             }
+
             return result;
         }
+
         public static object FirstNonConsecutive(int[] arr)
         {
             for (int j = 0; j < arr.Length; j++)
@@ -216,49 +233,57 @@ namespace Playground
                     return arr[j];
                 }
             }
+
             return null;
         }
+
         public static int Sum(int[] numbers)
         {
             if (numbers == null)
             {
                 return 0;
             }
+
             Array.Sort(numbers);
             var result = numbers.Skip(1).Take(numbers.Length - 1);
             return result.Sum();
         }
+
         public static bool is_divide_by(int number, int a, int b)
         {
-            if (number%a == 0 && number%b == 0)
+            if (number % a == 0 && number % b == 0)
             {
                 return true;
             }
 
             return false;
         }
+
         public static string[] StringToArray(string str)
         {
             // code code code
-            if(String.IsNullOrEmpty(str))
+            if (String.IsNullOrEmpty(str))
             {
                 return string.Empty.Split();
             }
+
             return str.Split();
         }
+
         public static string NoSpace(string input)
         {
             //Code it!
             var res = input.Split();
-            return String.Join("",input.Split());
-        }  
+            return String.Join("", input.Split());
+        }
+
         public static int CountSmileys(string[] smileys)
         {
             var num = 0;
             var sm = "";
             for (int i = 0; i < smileys.Length; i++)
             {
-                sm = String.Join("",smileys[i].Skip(i).Take(3));
+                sm = String.Join("", smileys[i].Skip(i).Take(3));
                 if (sm[0] == ';' || sm[0] == ':' && sm[1] == '-' || sm[1] == '~' && sm[2] == ')' || sm[2] == 'D')
                 {
                     num += 1;
@@ -267,6 +292,7 @@ namespace Playground
 
             return num;
         }
+
         public static string ExpandedForm(long num)
         {
             var number = num.ToString();
@@ -275,19 +301,22 @@ namespace Playground
             {
                 numbers[i] = number[i] + new string('0', number.Length - i - 1);
             }
-            
+
             return String.Join(" + ", numbers.Where(x => !x.StartsWith("0")));
         }
+
         public static IEnumerable<int> GetIntegersFromList(List<object> listOfItems)
         {
             return listOfItems.Where(x => x is Int32).Cast<int>();
         }
+
         public static int FindEvenIndex(int[] arr)
         {
             if (arr.Length == 0 || arr[0] == 0)
             {
                 return 0;
             }
+
             for (int i = 0; i < arr.Length; i++)
             {
                 if (Convert.ToInt32(arr.Sum()) == 0)
@@ -306,6 +335,7 @@ namespace Playground
 
             return -1;
         }
+
         //https://www.codewars.com/kata/5502c9e7b3216ec63c0001aa/train/csharp
         public static IEnumerable<string> OpenOrSenior(int[][] data)
         {
@@ -324,10 +354,6 @@ namespace Playground
             }
 
             return result;
-        }
-        public static void Main(string[] args)
-        {
-            Console.WriteLine(OpenOrSenior(new[] { new[] { 45, 12 }, new[] { 55, 21 }, new[] { 19, 2 }, new[] { 104, 20 } }));
         }
     }
 }
